@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar  class="color">
+    <ion-title class="centrado">Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <ion-content padding-top="30px">
+        <ion-list>
+          <ion-item class="vertical-space">
+        
+            <h1 class="center">DangerUS</h1>
+          </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" aria-placeholder="Ejemplo@email.com" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password" ></ion-input>
+        </ion-item>
+        </ion-list>
+        
+        <ion-button  class="boton" color="danger" expand="block" shape="round" (click)="login()">Iniciar Sesión</ion-button>
+        <ion-button fill="clear" color="danger" expand="block" (click)="gotoSignup()" >¿No tienes cuenta? <br>Registrate</ion-button>
+        </ion-content>
+        
+

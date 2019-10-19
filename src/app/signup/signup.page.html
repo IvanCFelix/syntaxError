@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    
+    <ion-title align='center'>Crea una cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-top="30px">
+<ion-list>
+  <ion-item class="vertical-space">
+
+    <h1 class="center">DangerUS</h1>
+  </ion-item>
+<ion-item>
+  <ion-label position="stacked">Email</ion-label>
+  <ion-input type="email" aria-placeholder="Ejemplo@email.com" [(ngModel)]="email"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Contraseña</ion-label>
+  <ion-input type="password" [(ngModel)]="password" ></ion-input>
+</ion-item>
+</ion-list>
+
+<ion-button class="boton" color="danger" expand="block" shape="round" (click)="entrar()">Crear cuenta</ion-button>
+<ion-button fill="clear" color="danger" expand="block" (click)="gotoLogin()" >Ya tienes una cuenta? <br>Accede</ion-button>
+</ion-content>
