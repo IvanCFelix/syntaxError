@@ -1,5 +1,7 @@
 {
   "name": "space",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
