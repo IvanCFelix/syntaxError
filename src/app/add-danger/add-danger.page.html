@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Agregar Zona de riesgo</ion-title>
+  <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+          <ion-button (click)="dismiss()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button> 
+        </ion-buttons>
+    <!--<ion-back-button color="light"></ion-back-button>-->
+    <ion-title >Agregar Zona de riesgo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked" >Titulo</ion-label>
+      <ion-input type="text" [(ngModel)]="danger_titulo" ></ion-input>
+    </ion-item>
+   
+     <ion-item>
+      <ion-label position="stacked" >Descripcion</ion-label>
+      <ion-input type="text" [(ngModel)]="danger_descripcion" ></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  <div class="boton">
+      <ion-button class="boton" (click)="gotoMap()">Localizacion</ion-button>
 
+      
+    </div>
+    <ion-button class="guardar" expand="block" shape="round" color="danger" (click)="addDanger()">Añadir Zona</ion-button>
 </ion-content>
