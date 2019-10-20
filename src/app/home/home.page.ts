@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ActionSheetController, NavController, NavParams } from '@ionic/angular';
 
 
 declare var google;
@@ -10,17 +10,21 @@ declare var google;
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
 
-  mapRef=null;
+  mapRef = null;
 
   constructor(
     private geolocation: Geolocation,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private navCtrl:NavController,
      ) {
   
   }
   ngOnInit(){
+   
+  }
+  ionViewDidEnter(){
     this.loadMap();
   }
   async loadMap(){
@@ -38,10 +42,13 @@ export class HomePage implements OnInit{
     google.maps.event
     .addListenerOnce(this.mapRef, 'idle', () => {
     loading.dismiss();
-    this.addMarker(myLatLng.lat,myLatLng.lng);
+   // this.addMarker(myLatLng.lat,myLatLng.lng);
     this.addMarker(25.798536,-108.97458);
    
     });
+  }
+  abrirPeligros(){
+    this.navCtrl.navigateForward(['/mapa-final']);
   }
   private addMarker(lat: number, lng:number){
     
@@ -53,7 +60,7 @@ export class HomePage implements OnInit{
       //  title: 'Ubicación Actual!'
     });
     marker.addListener('dragend',function(event){
-    var marcadorLatitud=this.getPosition().lat();
+    var marcadorLatitud =this.getPosition().lat();
     var marcadorLongitud=this.getPosition().lng();
       console.log(marcadorLatitud);
       console.log(marcadorLongitud);

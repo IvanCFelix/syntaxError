@@ -7,8 +7,18 @@
 </ion-header>
 
 <ion-content>
-  <div id="map">
+  <div id="mapfinal">
     
   </div>
 </ion-content>
-<ion-button id="salir" expand="block" fill="outline" size="large">Salir</ion-button>
+<ion-icon  name = "alien" src="alien.svg" ></ion-icon >
+<!-- <ion-button id="salir" expand="block" fill="outline" size="large">Salir</ion-button>-->
+<ion-fab  vertical="center" horizontal="end" slot="fixed" >
+  <ion-fab-button (click)="presentActionSheet()" color="danger" >Info</ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="start" slot="fixed" >
+  <ion-fab-button (click)="abrirPeligros()" color="danger">+</ion-fab-button>
+</ion-fab>
+
+
