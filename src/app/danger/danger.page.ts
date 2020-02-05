@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController} from  "@ionic/angular";
+
 @Component({
   selector: 'app-danger',
   templateUrl: './danger.page.html',
@@ -15,7 +16,7 @@ export class DangerPage implements OnInit {
   }
 
   addDanger(){
-    this.navCtrl.navigateForward(['/add-Danger']);
+    this.navCtrl.navigateForward(['/add-danger']);
   }
 
 }
